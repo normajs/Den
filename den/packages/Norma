@@ -1,0 +1,74 @@
+name: "apollos-core"
+
+tasks:
+
+  link:
+    endpoint: "NewSpring/norma-link"
+    group: ["package", "sample-app"]
+    "workbench/packages":
+      build: true
+      watch: true
+      root: "./"
+      "accounts": "accounts"
+      "api": "api"
+      "collection-helpers": "collection-helpers"
+      "components": "components"
+      "core": "core"
+      "file-system": "file-system"
+      "helpers": "helpers"
+      "layout": "layout"
+      "models": "models"
+      "namespace": "namespace"
+      "router": "router"
+      "standard-templates": "standard-templates"
+
+
+  # sample-app
+  bower:
+    "dev": true
+    group: "sample-app"
+    "/workbench":
+      settings: "https://github.com/NewSpring/settings.git"
+
+  javascript:
+    "dev": true
+    group: "sample-app"
+    src: "sample-app/**/*"
+    dest: "workbench/"
+
+
+  markup:
+    "dev": true
+    group: "sample-app"
+    "src": "sample-app/**/*"
+    "dest": "./workbench/"
+
+
+  sass:
+    group: "sample-app"
+    src: "sample-app/**/*"
+    dest: "workbench/"
+    lint: true
+    comb: true
+
+
+
+  meteor:
+    group: "sample-app"
+    "dev": true
+    "src": "workbench"
+    "settings": "workbench/settings/local.json"
+    # "port": 3000
+    # "mongoUrl": "mongodb://localhost/newspring-core"
+    "packages": [
+      "meteor-platform"
+      "newspring:apollos-core"
+    ]
+    "platforms": [
+      "server"
+      "browser"
+
+    ]
+
+# Testing
+test: "meteor --test --settings settings/development.json --release velocity:METEOR@1.1.0.2_2"

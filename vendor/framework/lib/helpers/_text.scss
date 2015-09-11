@@ -1,0 +1,106 @@
+
+$use-text: true!default;
+
+@if $use-text == true {
+  //
+  // @name .text-right
+  // @class .text-right
+  // @description aligns text to right
+  //
+  // @helper true
+  // @namespaced true
+  //
+  @include namespace("text-right") {
+    text-align: right;
+  }
+  //
+  // @name .text-left
+  // @class .text-left
+  // @description aligns text to left
+  //
+  // @helper true
+  // @namespaced true
+  //
+  @include namespace("text-left") {
+    text-align: left;
+  }
+  //
+  // @name .text-center
+  // @class .text-center
+  // @description aligns text to center
+  //
+  // @helper true
+  // @namespaced true
+  //
+  @include namespace("text-center") {
+    text-align: center;
+  }
+
+  //
+  // @name .text-dark
+  // @class .text-dark
+  // @description sets font color of text to be dark
+  //
+  // @helper true
+  //
+  .text-dark {
+    color: $dark-color;
+  }
+
+  //
+  // @name .text-light
+  // @class .text-light
+  // @description sets font color of text to be light
+  //
+  // @helper true
+  //
+  .text-light {
+    color: map-get($colors, light-secondary);
+  }
+
+  //
+  // @name .text-white
+  // @class .text-white
+  // @description sets font color of text to be white
+  //
+  // @helper true
+  //
+  .text-white {
+    color: $light-color;
+  }
+
+  //
+  // @name .text-brand
+  // @class .text-brand
+  // @description sets font color of text to be brand color
+  //
+  // @helper true
+  //
+  .text-brand,
+  .text-primary {
+    color: $brand-color;
+  }
+
+
+  //
+  // @name .text-dark-tertiary
+  // @class .text-dark-tertiary
+  // @description sets font color of text to be dark-tertiary;
+  //
+  // @helper true
+  //
+  .text-dark-tertiary {
+    color: map-get($colors, dark-tertiary);
+  }
+
+  //
+  // @name .text-light-tertiary
+  // @class .text-light-tertiary
+  // @description sets font color of text to be light-tertiary;
+  //
+  // @helper true
+  //
+  .text-light-tertiary {
+    color: map-get($colors, light-tertiary);
+  }
+}

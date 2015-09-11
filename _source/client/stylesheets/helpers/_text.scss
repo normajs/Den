@@ -1,0 +1,13 @@
+
+
+
+//
+// @name .text-dark-tertiary
+// @class .text-dark-tertiary
+// @description sets font color of text to be dark-tertiary;
+//
+// @helper true
+//
+.text-dark-secondary {
+  color: map-get($colors, dark-secondary);
+}

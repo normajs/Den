@@ -1,0 +1,46 @@
+
+%_locked {
+  position: absolute;
+}
+
+.locked {
+  @extend %_locked;
+}
+
+.locked-left {
+  @extend %_locked;
+
+  left: 0;
+}
+
+.locked-right {
+  @extend %_locked;
+
+  right: 0;
+}
+
+.locked-top {
+  @extend %_locked;
+
+  top: 0;
+}
+
+.locked-bottom {
+  @extend %_locked;
+
+  bottom: 0;
+}
+
+.locked-ends {
+  @extend %_locked;
+
+  top: 0;
+  bottom: 0;
+}
+
+.locked-sides {
+  @extend %_locked;
+
+  right: 0;
+  left: 0;
+}

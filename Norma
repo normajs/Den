@@ -1,0 +1,59 @@
+name: "Den"
+tasks:
+
+  link:
+    endpoint: "NewSpring/norma-link"
+    "den/":
+      build: true
+      packages: "normajs/apollos-core#refactor-package"
+    "vendor":
+      framework: "normajs/junction-framework"
+
+  bower:
+    "den/":
+      settings: "https://github.com/jbaxleyiii/settings.git"
+
+  sass:
+    group: "assets"
+    src: "_source/client/stylesheets/**/*"
+    dest: "den/client/stylesheets"
+    # dest: "den/public/raw/stylesheets"
+    lint: true
+    comb: true
+
+  # gzip:
+  #   endpoint: "NewSpring/norma-gzip"
+  #   src: "den/public/raw/stylesheets/**/*"
+  #   dest: "den/public/css"
+  #   order: "post"
+
+  javascript:
+    group: "assets"
+    src: "_source/**/*"
+    dest: "den"
+
+  markup:
+    group: "assets"
+    src: "_source/client/templates/**/*"
+    dest: "den/client/templates"
+    minify: true
+
+  meteor:
+    "src": "den"
+    "settings": "den/settings/sites/dapperink/settings.json"
+    "packages": [
+      "meteor-platform"
+      # "email"
+      # "force-ssl"
+      "newspring:apollos-core"
+
+      # "meteorhacks:fast-render"
+      # "meteorhacks:subs-manager"
+      # "meteorhacks:kadira"
+      # "hybrid:device",
+      # "datariot:ganalytics"
+    ]
+    "platforms": [
+      "server"
+      "browser"
+    ]

@@ -1,0 +1,6 @@
+
+.background--alert {
+  @extend %_background;
+
+  background-color: map-get($colors, alert);
+}
