@@ -23,5 +23,26 @@ coverage
 build/Release
 
 # Dependency directory
-# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
+# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git-
 node_modules
+
+.meteor/local
+
+out/*
+
+!out/.meteor/*
+
+.DS_Store
+
+.norma
+
+
+/vendor
+dapperink
+
+settings.json
+dapperink.pem
+mup.json
+bundle.crt
+dapper.csr
+private.key

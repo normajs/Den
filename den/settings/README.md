@@ -1,2 +1,0 @@
-# settings
-Private key storage
