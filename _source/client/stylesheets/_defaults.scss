@@ -12,6 +12,7 @@ $is-newspring: false;
 // ));
 
 $base-font-color: #303030;
+$base-border-size: 2px;
 $colors: extend($colors, (
   "primary": #ffc051,
   "secondary": #00b4f1,
@@ -31,8 +32,8 @@ $fonts: extend($fonts, (
     ),
     h2: (
       font-family: "Roboto Condensed",
-      font-size: 2.25em,
-      letter-spacing: 3px,
+      font-size: 2em,
+      letter-spacing: 1px,
       line-height: .9,
       text-transform: uppercase,
       margin-bottom: $base-spacing-unit

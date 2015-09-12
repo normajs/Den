@@ -25,6 +25,20 @@
   top: 0;
 }
 
+.locked-middle {
+  @extend %_locked;
+
+  top: 50%;
+}
+
+.locked-center {
+  @extend %_locked;
+
+  left: 50%;
+}
+
+
+
 .locked-bottom {
   @extend %_locked;
 

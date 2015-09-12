@@ -1,0 +1,7 @@
+
+.overlay--solid-dark-secondary {
+  @extend %_overlay;
+  &:after {
+    background: rgba($dark-color, .65);
+  }
+}

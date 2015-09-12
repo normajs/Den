@@ -1,0 +1,19 @@
+<template name="modal">
+
+  <div class="panel overlay--solid-dark">
+    <div class="panel__item one-whole overlay__item floating">
+      <div class="floating__item eleven-twelfths">
+        <div class="ratio--fat-rectangle">
+
+          <div class="ratio__item">
+            {{> Template.contentBlock}}
+            <div data-close="true" class="locked-right soft-half push-back-top push-back-right locked-top background--alert">
+              <span class="text-white fa fa-times"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</template>

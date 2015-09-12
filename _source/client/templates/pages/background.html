@@ -1,0 +1,47 @@
+<!--
+
+  Background panel
+
+  Contains a running list of projects on a persons board.
+
+  @TODO
+    - add a filter method
+    - add ability to swipe through and expose more projects
+    - show dates inline somehow
+
+-->
+<template name="background">
+
+  <div id="background" class="panel background--dark soft-sides floating">
+    <div class="floating__item one-whole">
+
+
+      <div class="grid">
+
+        {{#each cards}}{{#if image}}
+            <div class="grid__item one-third">
+              <div class="push-half-ends">
+                {{> projectCard image=image}}
+              </div>
+            </div>
+          {{else}}
+            <div class="grid__item one-third">
+              <div class="push-half-ends">
+
+                <div class="ratio--fat-rectangle">
+                  <div class="ratio__item">
+
+                  </div>
+                </div>
+
+
+              </div>
+
+            </div>
+        {{/if}}{{/each}}
+
+      </div>
+    </div>
+  </div>
+
+</template>
