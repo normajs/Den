@@ -6,7 +6,26 @@ class Calendar extends Apollos.Component
   vars: -> [
     desktopDuration: 250
     mobileDuration: 400
+    today: null
+    firstDay: null
+    lastDay: null
   ]
+
+  onCreated: ->
+
+    self = @
+
+    if self.data().calendarDate?.get()
+      date = self.data().calendarDate.get()
+      self.today.set moment(date, "MM/DD/YYYY").startOf("day")
+    else
+      self.today.set moment().startOf("day")
+
+    self.autorun ->
+      today = self.today.get()
+      self.firstDay.set moment(today).startOf("month").startOf("week").startOf("day")
+      self.lastDay.set moment(today).endOf("month").endOf("week").startOf("day")
+      self.data().calendarDate?.set today.format("MM/DD/YYYY")
 
   events: -> [
     "click [data-close]": (event) ->
@@ -15,6 +34,69 @@ class Calendar extends Apollos.Component
       Apollos.Component.destroyComponentForElement("#calendar")
       Apollos.Router.go("/desk")
   ]
+
+
+  days: ->
+    self = @
+
+    days = []
+
+    today = self.today.get()
+    startOfMonth = moment(today).startOf("month")
+    endOfMonth = moment(today).endOf("month")
+    day = self.firstDay.get()
+    end = self.lastDay.get()
+    i = 0
+
+    while day.unix() <= end.unix()
+      if day.unix() >= today.unix()
+
+        obj =
+          day: day.format("D")
+          unix: day.unix()
+          index: i
+          selected: day.unix() is today.unix()
+          month: day.format("MMM")
+        days.push(obj)
+
+      day.add(1, "day")
+      i += 1
+
+    return days
+
+
+  changeMonth: (event) ->
+    self = @
+
+    event.preventDefault()
+
+    direction = event.target.dataset.month
+    today = self.today.get()
+
+    if direction is "prev"
+      today.subtract(1, 'month')
+    else
+      today.add(1, 'month')
+
+    if today < moment().startOf("day")
+      today = moment().startOf("day")
+
+    self.today.set today
+
+    self.adjustPosition()
+
+
+  changeDay: (event) ->
+    self = @
+
+    event.preventDefault()
+
+    unix = event.target.dataset.day
+    today = moment.unix(unix)
+
+    unless today < moment().startOf("day")
+      self.today.set today
+
 
   insertDOMElement: (parent, node, before) ->
 
@@ -45,31 +127,3 @@ class Calendar extends Apollos.Component
       complete: (elements) ->
         $(node).remove()
         $('html').removeClass 'modal--opened'
-
-
-  # cards: ->
-  #
-  #   count = [0..8]
-  #   sampleImages = [
-  #     "//d13yacurqjgara.cloudfront.net/users/79723/screenshots/2238442/untitled-2.jpg"
-  #     "//d13yacurqjgara.cloudfront.net/users/248873/screenshots/1902180/screen_shot_2015-01-27_at_3.21.03_pm.png"
-  #     "//d13yacurqjgara.cloudfront.net/users/248873/screenshots/1902173/mountains.jpg"
-  #     "//d13yacurqjgara.cloudfront.net/users/248873/screenshots/1624445/screen_shot_2014-07-01_at_5.06.07_pm.png"
-  #     "//d13yacurqjgara.cloudfront.net/users/248873/screenshots/1288534/pisgah.png"
-  #   ]
-  #
-  #   projects = []
-  #   for card, index in count
-  #
-  #     console.log card, index
-  #     if index is 4
-  #       card = false
-  #       projects.push card
-  #       continue
-  #
-  #     card =
-  #       image: Random.choice sampleImages
-  #
-  #     projects.push card
-  #
-  #   return projects

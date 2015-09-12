@@ -25,21 +25,37 @@ Apollos.Router.route("/calendar", {
 
     Apollos.Layout.render("page-layout", {
       template: "desk"
+      modal: "calendar"
     })
 
-    if Meteor.isClient
-      Apollos.Component.render("calendar", {}, "body")
 
-  triggersExit: [
-    destroyCalendar: (context) ->
-      if Meteor.isClient
-        Apollos.Component.destroyComponentForElement("#calendar")
-
-
-  ]
 
   name: "calendar"
 })
+
+Apollos.Router.route("/new", {
+  action: (params, queryParams) ->
+
+    Apollos.Layout.render("page-layout", {
+      template: "desk"
+      modal: "new"
+    })
+
+  name: "new"
+})
+
+Apollos.Router.route("/new/:active", {
+  action: (params, queryParams) ->
+
+    Apollos.Layout.render("page-layout", {
+      template: "desk"
+      modal: "new"
+      data: params
+    })
+
+  name: "new"
+})
+
 
 
 Apollos.Router.route("/search", {
@@ -47,11 +63,8 @@ Apollos.Router.route("/search", {
 
     Apollos.Layout.render("page-layout", {
       template: "desk"
+      modal: "search"
     })
 
-    if Meteor.isClient
-      Apollos.Component.render("search", {}, "body")
-
-
-  name: "calendar"
+  name: "search"
 })

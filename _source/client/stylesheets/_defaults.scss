@@ -13,6 +13,7 @@ $is-newspring: false;
 
 $base-font-color: #303030;
 $base-border-size: 2px;
+$base-icon-size: $base-spacing-unit;
 $colors: extend($colors, (
   "primary": #ffc051,
   "secondary": #00b4f1,

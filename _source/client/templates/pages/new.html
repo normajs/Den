@@ -1,0 +1,34 @@
+
+<template name="new">
+
+  {{#modal}}
+    <div class="panel background--light">
+
+      <div class="panel__item--left one-tenth background--light-secondary">
+
+        <a href="/new/quote" class="display-block soft-double one-whole outlined--bottom outlined--light">
+          <span class="fa fa-dollar {{#if isActive '/new/quote/'}}text-primary{{else}}text-dark{{/if}}"></span>
+        </a>
+
+        <a href="/new/task" class="display-block soft-double one-whole outlined--bottom outlined--light">
+          <span class="fa fa-list {{#if isActive '/new/task/'}}text-primary{{else}}text-dark{{/if}}"></span>
+        </a>
+
+        <a href="/new/client" class="display-block soft-double one-whole outlined--bottom outlined--light">
+          <span class="fa fa-user {{#if isActive '/new/client/'}}text-primary{{else}}text-dark{{/if}}"></span>
+        </a>
+
+        <a href="/new/event" class="display-block soft-double one-whole outlined--bottom outlined--light">
+          <span class="fa fa-calendar-o {{#if isActive '/new/event/'}}text-primary{{else}}text-dark{{/if}}"></span>
+        </a>
+
+        <a href="/new/reminder" class="display-block soft-double one-whole outlined--bottom outlined--light">
+          <span class="fa fa-archive {{#if isActive '/new/reminder/'}}text-primary{{else}}text-dark{{/if}}"></span>
+        </a>
+      </div>
+
+    </div>
+  {{/modal}}
+
+
+</template>

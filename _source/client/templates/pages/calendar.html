@@ -5,26 +5,13 @@
       <div id="calendar-panel" class="locked-top locked-bottom locked-left one-third background--light">
         <div class="panel">
           <div class="panel__item--left one-quarter background--light-secondary scrollable">
-            <div class="soft one-whole text-center">
-              <h2 class="flush text-dark-secondary">6</h2>
-              <h5 class="flush"><small>SEP</small></h5>
+            {{#each days}}
+            <div data-day="{{unix}}" class="soft one-whole text-center">
+              <h2 class="flush {{#if selected}}text-primary{{else}}text-dark-secondary{{/if}}">{{day}}</h2>
+              <h5 class="flush"><small>{{month}}</small></h5>
             </div>
-            <div class="soft one-whole text-center">
-              <h2 class="flush text-dark-secondary">7</h2>
-              <h5 class="flush"><small>SEP</small></h5>
-            </div>
-            <div class="soft one-whole text-center">
-              <h2 class="flush text-dark-secondary">8</h2>
-              <h5 class="flush"><small>SEP</small></h5>
-            </div>
-            <div class="soft one-whole text-center">
-              <h2 class="flush text-dark-secondary">9</h2>
-              <h5 class="flush"><small>SEP</small></h5>
-            </div>
-            <div class="soft one-whole text-center">
-              <h2 class="flush text-dark-secondary">10</h2>
-              <h5 class="flush"><small>SEP</small></h5>
-            </div>
+            {{/each}}
+
           </div>
 
           <div class="panel__item--right three-quarters scrollable">
