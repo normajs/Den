@@ -18,11 +18,8 @@
 
 <template name="page-layout">
 
-  {{> Template.dynamic template=template data=data}}
-
-  {{#if modal}}
-    {{> Template.dynamic template=modal data=data}}
-  {{/if}}
+  {{> Template.dynamic template=template}}
+  {{> Template.dynamic template=modal data=data}}
 
 
 </template>

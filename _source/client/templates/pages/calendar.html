@@ -1,20 +1,19 @@
 <template name="calendar">
-  <div id="calendar" class="panel overlay--solid-dark" style="z-index: 99;">
-    <div class="overlay__item panel__item one-whole">
-      <div class="locked-top locked-bottom locked-right two-thirds" data-close="true"></div>
-      <div id="calendar-panel" class="locked-top locked-bottom locked-left one-third background--light">
+  {{#modal}}
+    <div class="panel background--light">
+      <div class="panel__item--left one-tenth background--light-secondary scrollable">
+        {{#each days}}
+        <div data-day="{{unix}}" class="soft push-half-ends one-whole text-center">
+          <h2 class="flush {{#if selected}}text-primary{{else}}text-dark-secondary{{/if}}">{{day}}</h2>
+          <h5 class="flush"><small>{{month}}</small></h5>
+        </div>
+        {{/each}}
+
+      </div>
+
+      <div class="panel__item--right nine-tenths scrollable">
         <div class="panel">
-          <div class="panel__item--left one-quarter background--light-secondary scrollable">
-            {{#each days}}
-            <div data-day="{{unix}}" class="soft one-whole text-center">
-              <h2 class="flush {{#if selected}}text-primary{{else}}text-dark-secondary{{/if}}">{{day}}</h2>
-              <h5 class="flush"><small>{{month}}</small></h5>
-            </div>
-            {{/each}}
-
-          </div>
-
-          <div class="panel__item--right three-quarters scrollable">
+          <div class="panel__item--left two-fifths text-left outlined--light outlined--right">
             <div class="one-whole text-left soft outlined--bottom outlined--light">
               <h4 class="flush">
                 <small>
@@ -31,7 +30,7 @@
               </h5>
             </div>
 
-            <div class="soft one-whole outlined--bottom outlined--light">
+            <div class="soft one-whole outlined--bottom">
               <h5>
                 <small>
                   Status: <span class="text-primary">On-Time</span>
@@ -57,8 +56,6 @@
 
             </div>
 
-
-
             <div class="soft-half-ends one-whole outlined--bottom outlined--light soft-left">
               <h5 class="uppercase flush">
                 <small>
@@ -66,10 +63,15 @@
                 </small>
               </h5>
             </div>
-          </div>
 
+          </div>
+          <div class="panel__item--right three-fifths">
+
+          </div>
         </div>
+
       </div>
+
     </div>
-  </div>
+  {{/modal}}
 </template>

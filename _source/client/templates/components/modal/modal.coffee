@@ -30,7 +30,7 @@ class Modal extends Apollos.Component
       .velocity "fadeIn",
         duration: self.desktopDuration.get()
         complete: (elements) ->
-          $('html').addClass 'modal--opened'
+          # $('html').addClass 'modal--opened'
     super
 
 
@@ -45,4 +45,4 @@ class Modal extends Apollos.Component
       duration: self.desktopDuration.get()
       complete: (elements) ->
         $(node).remove()
-        $('html').removeClass 'modal--opened'
+        # $('html').removeClass 'modal--opened'

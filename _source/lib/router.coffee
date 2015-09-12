@@ -2,7 +2,11 @@
 
 
 
+###
 
+  Home / Desk Layout
+
+###
 Apollos.Router.route("/", {
   action: (params, queryParams) ->
 
@@ -15,11 +19,18 @@ Apollos.Router.route("/desk", {
 
     Apollos.Layout.render("page-layout", {
       template: "desk"
+      modal: false
     })
 
   name: "desk"
 })
 
+
+###
+
+  Calendar
+
+###
 Apollos.Router.route("/calendar", {
   action: (params, queryParams) ->
 
@@ -33,6 +44,12 @@ Apollos.Router.route("/calendar", {
   name: "calendar"
 })
 
+
+###
+
+  Create new item
+
+###
 Apollos.Router.route("/new", {
   action: (params, queryParams) ->
 
@@ -44,6 +61,7 @@ Apollos.Router.route("/new", {
   name: "new"
 })
 
+
 Apollos.Router.route("/new/:active", {
   action: (params, queryParams) ->
 
@@ -53,10 +71,15 @@ Apollos.Router.route("/new/:active", {
       data: params
     })
 
-  name: "new"
 })
 
 
+
+###
+
+  Search
+
+###
 
 Apollos.Router.route("/search", {
   action: (params, queryParams) ->
