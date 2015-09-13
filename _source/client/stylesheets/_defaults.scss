@@ -190,7 +190,10 @@ $constraints: (
   "small-copy": (
     max-width: 400px
   ),
-  "submit": (
-    max-width: 400px
+  "ipad-mini": (
+    max-width: 1024px
+  ),
+  "iphone": (
+    max-width: 375px
   )
 );

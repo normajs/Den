@@ -2,6 +2,11 @@
 class ProjectCard extends Apollos.Component
   @register "projectCard"
 
+
+  events: -> [
+    "click": ->
+      console.log "project clicks still work"
+  ]
   image: ->
     @.data().data.image
 

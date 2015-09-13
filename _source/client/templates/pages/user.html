@@ -8,7 +8,7 @@
     locked-top locked-right
     {{/if}}">
     {{#if active.get}}
-      <div data-user-panel="true" class="panel__item--right one-third background--light">
+      <div data-user-panel="true" class="panel__item--right one-third constrain-iphone background--light" style="z-index: 999">
         <div class="grid outlined--bottom outlined--light">
           <div class="grid__item three-quarters">
             <div class="soft">
@@ -93,7 +93,7 @@
         </div>
 
       </div>
-      <div data-close="true" class="panel__item--left two-thirds overlay--solid-dark">
+      <div data-close="true" class="panel__item--left one-whole overlay--solid-dark" style="z-index: 998">
         <div class="overlay__item"></div>
       </div>
     {{/if}}
