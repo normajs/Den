@@ -15,3 +15,20 @@ class ProjectCard extends Apollos.Component
 
   name: ->
     @.data().data.name
+
+  status: ->
+
+    statuses = [
+      "background--push"
+
+      "background--production"
+
+      "background--gather-primary"
+      "background--gather-secondary"
+      "background--gather-tertiary"
+
+      "background--stale"
+
+    ]
+
+    return Random.choice statuses

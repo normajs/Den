@@ -1,6 +1,6 @@
 
 <template name="projectCard">
-  <div class="ratio--fat-rectangle background--light-secondary">
+  <a href="/project/{{client}}/{{name}}" class="ratio--fat-rectangle background--light-secondary">
     <div class="ratio__item background--fill" style="background-image:url({{image}})">
 
       <div class="locked-ends locked-sides floating--bottom overlay--solid-dark-secondary">
@@ -19,8 +19,13 @@
           --}}
 
         </div>
+
+      </div>
+      <div class="locked-top locked-left push-half overlay__item">
+        <div class="round soft {{status}}"></div>
       </div>
 
     </div>
-  </div>
+
+  </a>
 </template>

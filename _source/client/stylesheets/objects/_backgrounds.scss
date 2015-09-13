@@ -4,3 +4,40 @@
 
   background-color: map-get($colors, alert);
 }
+
+
+.background--push {
+  @extend %_background;
+
+  background-color: map-get($colors, push);
+}
+
+.background--production {
+  @extend %_background;
+
+  background-color: map-get($colors, production);
+}
+
+.background--gather-primary {
+  @extend %_background;
+
+  background-color: map-get($colors, gather-primary);
+}
+
+.background--gather-secondary {
+  @extend %_background;
+
+  background-color: map-get($colors, gather-secondary);
+}
+
+.background--gather-tertiary {
+  @extend %_background;
+
+  background-color: map-get($colors, gather-tertiary);
+}
+
+.background--stale {
+  @extend %_background;
+
+  background-color: map-get($colors, stale);
+}

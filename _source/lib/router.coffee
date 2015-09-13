@@ -20,6 +20,7 @@ Apollos.Router.route("/desk", {
     Apollos.Layout.render("page-layout", {
       template: "desk"
       modal: false
+      data: false
     })
 
   name: "desk"
@@ -37,6 +38,7 @@ Apollos.Router.route("/calendar", {
     Apollos.Layout.render("page-layout", {
       template: "desk"
       modal: "calendar"
+      data: false
     })
 
 
@@ -56,6 +58,7 @@ Apollos.Router.route("/new", {
     Apollos.Layout.render("page-layout", {
       template: "desk"
       modal: "new"
+      data: false
     })
 
   name: "new"
@@ -87,7 +90,37 @@ Apollos.Router.route("/search", {
     Apollos.Layout.render("page-layout", {
       template: "desk"
       modal: "search"
+      data: false
     })
 
   name: "search"
+})
+
+
+###
+
+  Projects
+
+###
+
+Apollos.Router.route("/project/:client/:name", {
+  action: (params, queryParams) ->
+
+    Apollos.Layout.render("page-layout", {
+      template: "desk"
+      modal: "product"
+      data: params
+    })
+
+})
+
+Apollos.Router.route("/project/:client/:name/:active", {
+  action: (params, queryParams) ->
+
+    Apollos.Layout.render("page-layout", {
+      template: "desk"
+      modal: "product"
+      data: params
+    })
+
 })

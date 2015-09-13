@@ -2,6 +2,6 @@
 .overlay--solid-dark-secondary {
   @extend %_overlay;
   &:after {
-    background: rgba($dark-color, .65);
+    background: rgba($dark-color, .45);
   }
 }
