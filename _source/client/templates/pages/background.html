@@ -18,10 +18,10 @@
 
       <div class="grid">
 
-        {{#each cards}}{{#if image}}
+        {{#each cards}}{{#if this}}
             <div class="grid__item one-third">
               <div class="push-half-ends">
-                {{> projectCard image=image}}
+                {{> projectCard data=this}}
               </div>
             </div>
           {{else}}

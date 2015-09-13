@@ -9,6 +9,7 @@ class Calendar extends Apollos.Component
     today: null
     firstDay: null
     lastDay: null
+    month: moment().format("MMMM")
   ]
 
   onCreated: ->
@@ -33,8 +34,27 @@ class Calendar extends Apollos.Component
       # remove once api is available for self.destroy()
       Blaze.remove @._internals.templateInstance.view
       Apollos.Router.go("/desk")
+
+    "click [data-day]": @.changeDay
+    "click [data-more-days]": @.showMoreDays
   ]
 
+
+  months: ->
+    months = []
+
+    monthCount = [0..11]
+
+    for month, index in monthCount
+      index = index + 1
+
+      _month = moment("#{index}", "M").format("MMMM")
+      months.push({
+        name: _month
+        val: _month
+      })
+
+    return months
 
   days: ->
     self = @
@@ -64,26 +84,22 @@ class Calendar extends Apollos.Component
 
     return days
 
+  showMoreDays: ->
+
+    
 
   changeMonth: (event) ->
     self = @
 
     event.preventDefault()
 
-    direction = event.target.dataset.month
-    today = self.today.get()
+    day = event.currentTarget.dataset.day
+    currentMonth = self.month.get()
+    newMonth = moment(day, "X").format("MMMM")
 
-    if direction is "prev"
-      today.subtract(1, 'month')
-    else
-      today.add(1, 'month')
+    if newMonth isnt currentMonth
+      self.month.set newMonth
 
-    if today < moment().startOf("day")
-      today = moment().startOf("day")
-
-    self.today.set today
-
-    self.adjustPosition()
 
 
   changeDay: (event) ->
@@ -91,7 +107,7 @@ class Calendar extends Apollos.Component
 
     event.preventDefault()
 
-    unix = event.target.dataset.day
+    unix = event.currentTarget.dataset.day
     today = moment.unix(unix)
 
     unless today < moment().startOf("day")

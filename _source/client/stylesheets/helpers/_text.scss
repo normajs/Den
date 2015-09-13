@@ -11,3 +11,8 @@
 .text-dark-secondary {
   color: map-get($colors, dark-secondary);
 }
+
+
+.text-alert {
+  color: map-get($colors, alert);
+}

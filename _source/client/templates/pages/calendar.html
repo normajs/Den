@@ -2,24 +2,36 @@
   {{#modal}}
     <div class="panel background--light">
       <div class="panel__item--left one-tenth background--light-secondary scrollable">
+
+        <div class="soft push-half-ends one-whole text-center">
+          <h2 data-more-days="prev" class="flush text-dark-tertiary fa fa-arrow-up"></h2>
+        </div>
         {{#each days}}
         <div data-day="{{unix}}" class="soft push-half-ends one-whole text-center">
           <h2 class="flush {{#if selected}}text-primary{{else}}text-dark-secondary{{/if}}">{{day}}</h2>
-          <h5 class="flush"><small>{{month}}</small></h5>
+          <h5 class="flush"><small>{{this.month}}</small></h5>
         </div>
         {{/each}}
 
+        <div class="soft push-half-ends one-whole text-center">
+          <h2 data-more-days="next" class="flush text-dark-tertiary fa fa-arrow-down"></h2>
+        </div>
       </div>
 
       <div class="panel__item--right nine-tenths scrollable">
         <div class="panel">
           <div class="panel__item--left two-fifths text-left outlined--light outlined--right">
             <div class="one-whole text-left soft outlined--bottom outlined--light">
-              <h4 class="flush">
-                <small>
-                  September
-                </small>
-              </h4>
+              {{> Apollos.Forms.Select
+                name="Month"
+                items=months
+                includeBlank=true
+                placeholder="Month"
+                hideLabel=true
+                class="one-half flush hard"
+                selectClass="h4 small hard-left outlined--none text-dark flush"
+                preFill=month.get
+              }}
             </div>
 
             <div class="soft-half-ends one-whole outlined--bottom outlined--light soft-left">
@@ -65,7 +77,11 @@
             </div>
 
           </div>
-          <div class="panel__item--right three-fifths">
+          <div class="panel__item--right three-fifths background--light-tertiary floating">
+            <div class="floating__item">
+              <span class="fa-2x fa fa-thumbs-o-up text-dark-secondary"></span>
+              <h5 class="flush"><small class="text-dark-secondary">You Rock</small></h5>
+            </div>
 
           </div>
         </div>
