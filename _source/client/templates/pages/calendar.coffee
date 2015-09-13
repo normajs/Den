@@ -29,12 +29,6 @@ class Calendar extends Apollos.Component
       self.data().calendarDate?.set today.format("MM/DD/YYYY")
 
   events: -> [
-    "click [data-close]": (event) ->
-
-      # remove once api is available for self.destroy()
-      Blaze.remove @._internals.templateInstance.view
-      Apollos.Router.go("/desk")
-
     "click [data-day]": @.changeDay
     "click [data-more-days]": @.showMoreDays
   ]
@@ -86,7 +80,7 @@ class Calendar extends Apollos.Component
 
   showMoreDays: ->
 
-    
+
 
   changeMonth: (event) ->
     self = @

@@ -8,14 +8,14 @@ class Modal extends Apollos.Component
     mobileDuration: 400
   ]
 
-  # events: -> [
-  #   "click [data-close]": (event) ->
-  #
-  #     console.log @._internals
-  #     # remove once api is available for self.destroy()
-  #     Blaze.remove @._internals.templateInstance.view
-  #     Apollos.Router.go("/desk")
-  # ]
+  events: -> [
+    "click [data-close]": (event) ->
+
+      # console.log @.parent()._internals
+      # remove once api is available for self.destroy()
+      Blaze.remove @.parent()._internals.templateInstance.view
+      Apollos.Router.go("/desk")
+  ]
 
   insertDOMElement: (parent, node, before) ->
 

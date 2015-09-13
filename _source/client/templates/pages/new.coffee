@@ -19,10 +19,6 @@ class New extends Apollos.Component
     return
 
   events: -> [
-    "click [data-close]": (event) ->
-      # remove once api is available for self.destroy()
-      Blaze.remove @._internals.templateInstance.view
-      Apollos.Router.go("/desk")
 
     "click a[href*=\"new/\"]": (event) ->
       event.preventDefault()
