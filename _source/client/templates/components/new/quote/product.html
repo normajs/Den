@@ -1,0 +1,16 @@
+
+<template name="productModifier">
+
+
+  {{#each modifiers.get}}
+
+    <div class="soft-ends">
+      {{> modifier count=count modifier=this active=active}}
+    </div>
+
+
+  {{/each}}
+
+
+
+</template>

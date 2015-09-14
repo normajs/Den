@@ -8,22 +8,76 @@
 <template name="search">
   {{#modal}}
     <div class="panel background--light">
-      <div class="grid one-whole">
-        <div class="grid__item one-half">
+      <div class="grid one-whole outlined--bottom outlined--light background--light-secondary flush">
+        <div class="grid__item one-half hard">
           <div class="soft soft-double-top">
             {{> Apollos.Forms.Input
               name="Search"
+              class="soft-half-bottom"
             }}
           </div>
         </div>
 
       </div>
-      <div class="grid">
-        <div class="grid__item one-third">
-
+      <div class="grid flush one-whole ">
+        <div class="hard grid__item one-third text-center outlined--right outlined--light">
+          <h5 class="flush soft-half"><small>Clients</small></h5>
         </div>
-        <div class="grid__item two-thirds">
+        <div class="hard grid__item one-third text-center outlined--right outlined--light">
+          <h5 class="flush soft-half"><small>Projects</small></h5>
+        </div>
+        <div class="hard grid__item one-third text-center outlined--right outlined--light">
+          <h5 class="flush soft-half"><small>Reminders</small></h5>
+        </div>
+      </div>
+      <div class="grid flush">
+        <div class="hard grid__item one-third text-left outlined--light outlined--right">
+          <div class="soft one-whole">
+            <h5>
+              <small>
+                Status: <span class="text-primary">On-Time</span>
+              </small>
+            </h5>
+            <h4>
+              The Landmark Project Deliver
+            </h4>
 
+
+          </div>
+        </div>
+        <div class="hard grid__item one-third text-left outlined--light outlined--right">
+          <div class="soft text-left">
+            <div class="grid">
+              <div class="grid__item one-fifth">
+                <div class="ratio--square">
+                  <div class="ratio__item round background--fill" style="background-image:url(//s3.amazonaws.com/images.dapperink/dapper/site/images/tj.jpg)">
+                  </div>
+                </div>
+              </div>
+              <div class="grid__item four-fifths">
+                <p>
+                  <small>
+                    Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+                  </small>
+                </p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="hard grid__item one-third text-left">
+          <div class="soft one-whole">
+            <h5>
+              <small>
+                Status: <span class="text-primary">On-Time</span>
+              </small>
+            </h5>
+            <h4>
+              The Landmark Project Deliver
+            </h4>
+
+
+          </div>
         </div>
       </div>
 

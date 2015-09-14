@@ -1,0 +1,31 @@
+
+<template name="modifier">
+
+
+    {{#with modifier}}
+
+      {{#if $eq type "select"}}
+
+
+        {{#if active}}
+          {{> Apollos.Forms.Select
+            name=name
+            items=modifiers
+            includeBlank=true
+            placeholder=placeholderText
+            hideLabel=true
+            prefill=false
+            class='flush hard'
+          }}
+        {{else}}
+        <div class="select-disabled text-center">
+          <span class="btn btn--gray">{{placeholderText}}</span>
+        </div>
+        {{/if}}
+
+
+      {{/if}}
+
+    {{/with}}
+
+</template>
