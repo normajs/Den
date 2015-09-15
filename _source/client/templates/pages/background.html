@@ -12,8 +12,10 @@
 -->
 <template name="background">
 
-  <div id="background" class="panel background--dark soft-sides floating">
-    <div class="floating__item one-whole constrain-ipad-mini">
+
+
+  <div id="background" class="panel background--dark soft-half-sides floating">
+    <div class="floating__item nine-tenths constrain-ipad-mini">
 
 
       <div class="grid">
@@ -80,6 +82,31 @@
 
       </div>
     </div>
+  </div>
+  <div class="locked-top locked-left push-half-top push-half-left" style="z-index: 10;">
+    <a href="/search" data-user="true" class="display-block round soft-double background--light ">
+      <span class="fa fa-search text-dark locked-middle locked-centered push-back-half-top push-back-half-left"></span>
+      <!-- <h5 class="flush"><small class="text-dark-secondary">Tasks</small></h5> -->
+
+    </a>
+
+  </div>
+  <div class="locked-bottom locked-left push-half-bottom push-half-left" style="z-index: 10;">
+    <a href="/calendar" data-user="true" class="display-block round soft-double background--light ">
+      <span class="fa fa-calendar-o text-dark locked-middle locked-centered push-back-half-top push-back-half-left"></span>
+      <!-- <h5 class="flush"><small class="text-dark-secondary">Tasks</small></h5> -->
+
+    </a>
+
+  </div>
+
+  <div class="locked-bottom locked-right push-half-bottom push-half-right" style="z-index: 10;">
+    <a href="/new" data-user="true" class="display-block round soft-double background--light ">
+      <span class="fa fa-plus text-dark locked-middle locked-centered push-back-half-top push-back-half-left"></span>
+      <!-- <h5 class="flush"><small class="text-dark-secondary">Tasks</small></h5> -->
+
+    </a>
+
   </div>
 
 </template>

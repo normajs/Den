@@ -16,3 +16,11 @@
 .text-alert {
   color: map-get($colors, alert);
 }
+
+
+.text-truncate {
+  overflow: hidden;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

@@ -4,13 +4,18 @@
     <div class="ratio__item background--fill" style="background-image:url({{image}})">
 
       <div class="locked-ends locked-sides floating--bottom overlay--solid-dark-secondary">
-        <div class="floating__item one-whole overlay__item text-left">
-          <div class="soft-half">
-            <h5 class="text-light flush uppercase"><small>{{client}}</small></h5>
-            <h4 class="text-light flush">
-              {{name}}
-            </h4>
+        <div class="locked-left locked-right locked-bottom overlay__item text-left">
+          <div class="overlay--solid-dark-secondary">
+            <div class="overlay__item soft-right">
+              <div class="soft-half soft-double-right">
+                <h5 class="text-light flush uppercase text-truncate"><small>{{client}}</small></h5>
+                <h4 class="text-light flush text-truncate">
+                  {{name}}
+                </h4>
+              </div>
+            </div>
           </div>
+
 
 
           {{!--
@@ -21,7 +26,7 @@
         </div>
 
       </div>
-      <div class="locked-top locked-left push-half overlay__item">
+      <div class="locked-bottom locked-right push-half overlay__item">
         <div class="round soft {{status}}"></div>
       </div>
 

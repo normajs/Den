@@ -74,10 +74,10 @@ class Background extends Apollos.Component
     numbers = count.slice()
     for card, index in count
 
-      if index is 4
-        card = false
-        projects.push card
-        continue
+      # if index is 4
+      #   card = false
+      #   projects.push card
+      #   continue
 
       clientIndex = Random.choice numbers
       client = sampleData[clientIndex]

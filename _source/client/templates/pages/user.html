@@ -6,9 +6,9 @@
     panel
     {{else}}
     locked-top locked-right
-    {{/if}}">
+    {{/if}}" style="z-index: 11">
     {{#if active.get}}
-      <div data-user-panel="true" class="panel__item--right one-third constrain-iphone background--light" style="z-index: 9">
+      <div data-user-panel="true" class="panel__item--right one-third constrain-iphone background--light" style="z-index: 99">
         <div class="grid outlined--bottom outlined--light">
           <div class="grid__item three-quarters">
             <div class="soft">
@@ -93,11 +93,11 @@
         </div>
 
       </div>
-      <div data-close="true" class="panel__item--left one-whole overlay--solid-dark" style="z-index: 8">
+      <div data-close="true" class="panel__item--left one-whole overlay--solid-dark" style="z-index: 98">
         <div class="overlay__item"></div>
       </div>
     {{/if}}
-    <div class="locked-top locked-right push-half-top push-half-right" style="z-index: 10;">
+    <div class="locked-top locked-right push-half-top push-half-right" style="z-index: 100;">
       <div data-user="true" class="round soft-double background--fill" style="background-image:url(//s3.amazonaws.com/images.dapperink/dapper/site/images/clarisa.jpg)">
         <div class="round locked-middle push-back-top locked-left push-back-left">
           <div class="soft round background--alert">
