@@ -190,7 +190,6 @@ class quote extends Apollos.Component
     if serviceName is oldService
       return
 
-    console.log serviceName
     @.parent().serviceName.set serviceName
 
 
