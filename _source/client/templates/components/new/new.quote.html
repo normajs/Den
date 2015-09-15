@@ -1,7 +1,9 @@
 
 <template name="Den.new.quote">
 
-  {{#with service}}
-    {{> quote}}
-  {{/with}}
+  {{#if subscriptionsReady}}
+    {{#with service}}
+      {{> quote}}
+    {{/with}}
+  {{/if}}
 </template>

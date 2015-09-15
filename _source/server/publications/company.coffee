@@ -6,8 +6,8 @@ Meteor.publish "services", ->
   return Apollos.services.find()
 
 
-Meteor.publish "products", (service) ->
+Meteor.publish "products",  ->
 
-  products = Apollos.products.find({service: service}, {sort: order: 1})
+  products = Apollos.products.find({}, {sort: order: 1})
 
   return products

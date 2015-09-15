@@ -44,21 +44,34 @@ class quote extends Apollos.Component
     submitted: false
     ready: false
     selectedModifiers: {}
+    _inquiryData: false
 
   ]
 
   placeholderText: ->
-    return "1. #{@.data().quote.action}"
+    return "#{@.data().quote.action}"
 
   subscriptions: -> [
-    "products":
-      args: [
-        @.data().name
-      ]
+    "products"
   ]
 
+  services: ->
+    services = Apollos.services.find().fetch()
+    if services.length
+      services = services.map( (opt) ->
+        return {
+          val: opt.name
+          name: opt.label or opt.name
+        }
+      )
+      return services
+
+    return []
+
   products: ->
-    products = Apollos.products.find().fetch()
+    self = @
+    service = self.parent().serviceName.get()
+    products = Apollos.products.find({service: service}).fetch()
     if products.length
       products = products.map( (opt) ->
         return {
@@ -72,6 +85,7 @@ class quote extends Apollos.Component
 
   events: -> [
     "change #products": @.setProduct
+    "change #services": @.setServices
     "submit form": @.createInquiry
   ]
 
@@ -79,6 +93,7 @@ class quote extends Apollos.Component
   onRendered: ->
     self = @
     serviceModifier = self.data().quote.modifier
+
 
     self.autorun ->
       product = self.productName.get()
@@ -164,6 +179,23 @@ class quote extends Apollos.Component
     # render
     self.price.set totalPrice
 
+  setServices: (event) ->
+
+    event.preventDefault()
+    self = @
+
+    oldService = @.parent().serviceName.get()
+    serviceName = event.target.value
+
+    if serviceName is oldService
+      return
+
+    console.log serviceName
+    @.parent().serviceName.set serviceName
+
+
+
+
   setProduct: (event) ->
 
     event.preventDefault()
@@ -194,7 +226,7 @@ class quote extends Apollos.Component
       self.price.set 0
       self.selectedModifiers.set {}
       self.modifiedBase.set {}
-  
+
       break
 
 
@@ -339,17 +371,10 @@ class quote extends Apollos.Component
 
     price = self.price.get()
     price or= "call for pricing"
-
-    route = Apollos.router.current()
-    service = route.params?.service
-    service or= window.location.pathname
-
-    modal = Apollos.Component.getComponent("submitCard")
-    modal = modal.renderComponent()
+    service = self.parent().serviceName.get()
 
     data =
       type: service
-      customer: Device
       responded: false
       viewed: false
       product:
@@ -358,40 +383,9 @@ class quote extends Apollos.Component
       options: options
       price: price
 
-    modal = Blaze.renderWithData(
-      modal
-      { data: data, isQuote: true}
-      document.body
-    )
+    Apollos.inquiries.insert(data)
 
-    # Apollos.inquiries.insert({
-    #   # email: email
-    #   type: service
-    #   customer: Device
-    #   responded: false
-    #   viewed: false
-    #   product:
-    #     name: product.name
-    #     label: product.label
-    #   options: options
-    #   price: price
-    # })
-    #
-    # self.submitted.set true
-    #
-    # setTimeout ->
-    #   self.submitted.set false
-    #   self.productName.set false
-    #   options =
-    #     speed: 1000
-    #     easing: 'easeOutCubic'
-    #     offset: 250
-    #
-    #   smoothScroll.animateScroll(
-    #     null, '#products', options
-    #   );
-    #
-    # , 5000
+
 
   insertDOMElement: (parent, node, before) ->
     if not node.id

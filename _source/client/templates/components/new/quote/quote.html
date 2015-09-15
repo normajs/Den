@@ -1,101 +1,101 @@
 <template name="quote">
-  <section class="hard flush">
+  {{#if subscriptionsReady}}
+  {{#Apollos.Forms.Form name='quote' class="panel"}}
 
+    <div class="panel__item--left two-fifths floating">
+      <div class="floating__item three-quarters">
+        {{#if price.get}}
+          <h4>Estimated Price per Item:</h4>
+          <h2 class="flush">${{price.get}}</h2>
 
-    {{#Apollos.Forms.Form name='quote' class="hard text-center"}}
-    <section class="hard flush grid">
-      <div class="grid__item lap-and-up-one-half hard flush" style="vertical-align: middle;">
+        {{else}}
 
-        <section class="lap-and-up-soft-double-sides text-center">
+          {{#if message.get}}
 
-
-
-          {{#if products}}
-          <div id="products">
-
-            {{> Apollos.Forms.Select
-              name=name
-              items=products
-              placeholder=placeholderText
-              includeBlank=true
-              hideLabel=true
-              prefill=false
-              class='soft-bottom flush'
-              id="products"
-            }}
-
-          </div>
+            <h4 class="flush">
+              {{message.get}}
+            </h4>
+          {{else}}
+            <h4 > Estimated Price per Item:</h4>
+            <h2 class="flush">$0</h2>
           {{/if}}
 
-
-          <div id="modifier">
-            {{> productModifier name=productName.get}}
-          </div>
-
-        </section>
-
+        {{/if}}
 
       </div>
+    </div>
+  </div>
 
-      <div class="grid__item lap-and-up-one-half hard flush" style="vertical-align: middle;">
-        <section class="hard">
-          <div class="grid flush">
+  <div class="panel__item--right three-fifths floating background--light-tertiary">
+    <div class="floating__item three-quarters">
 
-            <div class="grid__item hard one-whole background--primary">
-              <div class="handheld-ratio--none lap-and-up-ratio--fat-rectangle ">
-                <div class="ratio__item text-center soft soft-double-top handheld-push-top lap-and-up-soft-double floating">
-                  <div class="floating__item">
-                    {{#if price.get}}
-                      <h4 class="text-white">Estimated Price per Item:</h4>
-                      <h2 class="text-white flush">${{price.get}}</h2>
-
-                    {{else}}
-
-                      {{#if message.get}}
-
-                        <h4 class="flush text-white">
-                          {{message.get}}
-                        </h4>
-                      {{else}}
-                        <h4 class="text-white"> Estimated Price per Item:</h4>
-                        <h2 class="text-white flush">$0</h2>
-                      {{/if}}
-
-                    {{/if}}
-                  </div>
-                </div>
-
-                <div class="one-whole" style="margin: 0 auto; {{#unless MediaQuery 'handheld'}}position:absolute; bottom: 0;{{/unless}}">
-
-                  <h5 class="soft constrain-small-copy" >
-                    {{!--
-                    <small class="text-white">*Price discounts available for multiple products in the same order, please contact us for more information.</small>
-                    --}}
-                  </h5>
-
-                </div>
-
-
-              </div>
-            </div>
-
-
-
-
-            {{> submit submitted=true ready=ready.get}}
-
-
-
+      <div id="information">
+        <div class="grid">
+          <div class="grid__item one-half">
+            {{> Apollos.Forms.Input
+              name="First Name"
+              class="soft-half-bottom"
+              inputClass='h4'
+            }}
           </div>
-        </section>
+          <div class="grid__item one-half">
+            {{> Apollos.Forms.Input
+              name="Last Name"
+              class="soft-half-bottom"
+              inputClass='h4'
+            }}
+          </div>
+        </div>
+      </div>
+      <div id="services">
+
+        {{> Apollos.Forms.Select
+          name="services"
+          items=services
+          placeholder="Choose Service"
+          includeBlank=true
+          label="Choose Service"
+          prefill=false
+          class='push-half-ends hard'
+          selectClass='h4'
+          optionClass="lowercase"
+          id="services"
+        }}
+      </div>
+
+      {{#if products}}
+      <div id="products">
+
+        {{> Apollos.Forms.Select
+          name=name
+          items=products
+          placeholder=placeholderText
+          includeBlank=true
+          label=placeholderText
+          prefill=false
+          class='push-half-ends hard'
+          selectClass='h4'
+          optionClass="lowercase"
+          id="products"
+        }}
+
+      </div>
+      {{/if}}
+
+      <div id="modifier">
+        {{> productModifier name=productName.get}}
+      </div>
+
+      <div id="submit">
+        {{> submit submitted=true ready=ready.get}}
       </div>
 
 
 
+    </div>
 
-
-      </section>
-    {{/Apollos.Forms.Form}}
-  </section>
+  </div>
+  {{/Apollos.Forms.Form}}
+  {{/if}}
 
 </template>

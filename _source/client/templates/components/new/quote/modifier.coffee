@@ -21,7 +21,7 @@ class modifier extends Apollos.Component
   placeholderText: ->
     data = @.data()
     label = if data.modifier.label then data.modifier.label else data.modifier.name
-    string = "#{data.count}. #{label}"
+    string = "#{label}"
     return string
 
   modifier: ->
