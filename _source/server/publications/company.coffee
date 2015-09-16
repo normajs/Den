@@ -11,3 +11,6 @@ Meteor.publish "products",  ->
   products = Apollos.products.find({}, {sort: order: 1})
 
   return products
+
+Meteor.publish "clients", ->
+  return Apollos.clients.find()

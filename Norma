@@ -47,6 +47,7 @@ tasks:
       # "force-ssl"
       "newspring:apollos-core"
       "momentjs:moment"
+      "digilord:faker"
       # "meteorhacks:fast-render"
       # "meteorhacks:subs-manager"
       # "meteorhacks:kadira"
