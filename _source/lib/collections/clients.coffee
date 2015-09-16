@@ -23,9 +23,6 @@ clients = Apollos.generateSchema
   notes:
     type: String
     optional: true
-  status:
-    type: String
-    optional: false
   contacts:
     type: [Object]
     blackbox: true

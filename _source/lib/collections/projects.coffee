@@ -11,24 +11,37 @@ projects = Apollos.generateSchema
   address:
     type: Object
     optional: false
+    blackbox: true
   inHandsDate:
     type: Date
     optional: false
   orderType:
     type: String
     optional: false
+  image:
+    type: String
+    optional: true
   details:
     type: [Object]
     optional: false
+    blackbox: true
   conditions:
     type: [Object]
     optional: false
+    blackbox: true
+  notes:
+    type: String
+    optional: true
   status:
     type: String
     optional: false
   employee:
     type: String
     optional: false
+  comments:
+    type: [Object]
+    optional: true
+    blackbox: true
   archived:
     type: Boolean
     optional: true

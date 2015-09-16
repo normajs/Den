@@ -14,3 +14,10 @@ Meteor.publish "products",  ->
 
 Meteor.publish "clients", ->
   return Apollos.clients.find()
+
+Meteor.publish "projects", ->
+  return Apollos.projects.find({}, {
+    limit: 9
+    sort:
+      inHandsDate: 1
+    })

@@ -13,22 +13,11 @@ class ProjectCard extends Apollos.Component
   client: ->
     @.data().data.client
 
+  id: =>
+    @.data().data._id
+    
   name: ->
     @.data().data.name
 
   status: ->
-
-    statuses = [
-      "background--push"
-
-      "background--production"
-
-      "background--gather-primary"
-      "background--gather-secondary"
-      "background--gather-tertiary"
-
-      "background--stale"
-
-    ]
-
-    return Random.choice statuses
+    @.data().data.status
