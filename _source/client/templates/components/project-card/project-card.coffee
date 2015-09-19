@@ -2,16 +2,19 @@
 class ProjectCard extends Apollos.Component
   @register "projectCard"
 
-
-  events: -> [
-    "click": ->
-      console.log "project clicks still work"
+  subscriptions: -> [
+    "clients"
   ]
+
   image: ->
     @.data().data.image
 
   client: ->
-    @.data().data.client
+    client = @.data().data.client
+
+    _client = Apollos.clients.findOne(_id: client)
+
+    return _client.name
 
   id: =>
     @.data().data._id
