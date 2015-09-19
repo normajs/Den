@@ -97,17 +97,26 @@
         <div class="overlay__item"></div>
       </div>
     {{/if}}
-    <div class="locked-top locked-right push-half-top push-half-right" style="z-index: 100;">
-      <div data-user="true" class="round soft-double background--fill" style="background-image:url(//s3.amazonaws.com/images.dapperink/dapper/site/images/clarisa.jpg)">
-        <div class="round locked-middle push-back-top locked-left push-back-left">
-          <div class="soft round background--alert">
+    <div class="locked-top locked-right push-top {{#if active.get}}push-right{{else}}push-half-right{{/if}} transition" style="z-index: 100;">
+      <div data-user="true" class="round soft background--fill" style="background-image:url(//s3.amazonaws.com/images.dapperink/dapper/site/images/clarisa.jpg)">
+        <div class="soft-half"></div>
+
+        <div class="round locked-top locked-right" style="margin-top: -5px; margin-right: -5px;">
+          <div class="soft round background--alert" style="padding: 15px;">
+
             <div class="panel">
               <div class="panel__item one-whole text-center">
-                <h5 class="text-white flush soft-half-top">2</h5>
+                <h5 class="text-white flush" style="padding-top: 3px;">
+                  <small class="text-white">
+                    10
+                  </small>
+                </h5>
               </div>
             </div>
+
           </div>
         </div>
+
       </div>
 
     </div>

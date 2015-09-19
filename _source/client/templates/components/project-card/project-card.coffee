@@ -15,7 +15,7 @@ class ProjectCard extends Apollos.Component
 
   id: =>
     @.data().data._id
-    
+
   name: ->
     @.data().data.name
 
