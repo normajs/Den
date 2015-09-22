@@ -9,6 +9,14 @@
   font-weight: 600;
 }
 
+.input:not(.input--active) > label,
+input,
+select {
+  text-transform: none!important;
+
+  font-weight: 500!important;
+}
+
 .input--active > label {
   top: 0;
   // margin-bottom: 5px;

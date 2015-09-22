@@ -39,5 +39,5 @@ class New extends Apollos.Component
       @.type.set "Den.new.#{data.active}"
 
     url = @.type.get()
-    url = url.replace("Den.new.quote", "")
+    url = url.replace("Den.new.", "")
     Apollos.Router.redirect("/new/#{url}", true)

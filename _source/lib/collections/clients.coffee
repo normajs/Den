@@ -6,11 +6,14 @@ clients = Apollos.generateSchema
   name:
     type: String
     optional: false
+  avatar:
+    type: String
+    optional: true
   projects:
     type: [String]
     optional: true
   address:
-    type: Object
+    type: [Object]
     blackbox: true
     optional: true
   email:

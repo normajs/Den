@@ -1,0 +1,193 @@
+<template name="Den.new.client">
+
+{{#if subscriptionsReady}}
+  {{#Apollos.Forms.Form name='client' class="panel"}}
+
+      <div class="panel__item--left two-fifths floating">
+        <div class="floating__item three-quarters">
+
+          <!-- Avatar -->
+          <div class="soft-sides" style="position: relative;">
+            <div class="ratio--square push-double-bottom round background--fill" style="background-image:url({{avatar}})">
+              <div class="ratio__item">
+
+
+              </div>
+
+            </div>
+            <div class="locked-top locked-right push-top push-right background--light-tertiary soft-half round" style="padding-top: 11px">
+              <span class="fa fa-cloud-upload text-dark"></span>
+            </div>
+          </div>
+
+
+          <div id="information">
+            <div class="grid">
+              <div class="grid__item one-whole">
+                {{> Apollos.Forms.Input
+                  name="Organization"
+                  class="soft-half-bottom"
+                  inputClass='h4'
+                }}
+              </div>
+              <div class="grid__item one-whole">
+                {{> Apollos.Forms.Input
+                  name="Email"
+                  class="soft-half-bottom"
+                  inputClass='h4'
+                }}
+              </div>
+              <div class="grid__item one-whole">
+                {{> Apollos.Forms.Input
+                  name="Phone"
+                  class="soft-half-bottom"
+                  inputClass='h4'
+                }}
+              </div>
+
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
+    </div>
+
+    <div class="panel__item--right three-fifths background--light-tertiary scrollable text-center">
+      <div class="one-whole soft-double">
+
+        <div class="soft-double-ends text-left">
+          <h4 class="soft-bottom">Contacts</h4>
+          <div class="grid">
+            <div class="grid__item one-half">
+              {{> Apollos.Forms.Input
+                name="First Name"
+                class="soft-half-bottom"
+                inputClass='h4'
+                placeholder=" "
+              }}
+            </div>
+            <div class="grid__item one-half">
+              {{> Apollos.Forms.Input
+                name="Last Name"
+                class="soft-half-bottom"
+                inputClass='h4'
+                placeholder=" "
+              }}
+            </div>
+            <div class="grid__item one-whole">
+              {{> Apollos.Forms.Input
+                name="Email"
+                class="soft-half-bottom"
+                inputClass='h4'
+                placeholder=" "
+              }}
+            </div>
+            <div class="grid__item one-whole">
+              {{> Apollos.Forms.Input
+                name="Phone"
+                class="soft-half-bottom"
+                inputClass='h4'
+                placeholder=" "
+              }}
+            </div>
+          </div>
+          <div class="grid">
+            <div class="grid__item one-half">
+              <button class="btn one-whole">
+                Add More
+              </button>
+            </div>
+            <div class="grid__item one-half">
+              <button class="btn btn--filled one-whole">
+                Save
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="soft-double-ends text-left">
+          <h4 class="soft-bottom">Locations</h4>
+
+          {{> Apollos.Forms.Input
+            name="Street1"
+            label="Address"
+            class="soft-half-bottom"
+            inputClass='h4'
+            placeholder=" "
+          }}
+          {{> Apollos.Forms.Input
+            name="Street2"
+            label="Address2"
+            class="soft-half-bottom"
+            inputClass='h4'
+            placeholder=" "
+          }}
+          <div class="grid">
+            <div class="grid__item one-half">
+              {{> Apollos.Forms.Input
+                name="City"
+                label="City"
+                class="soft-half-bottom"
+                inputClass='h4'
+                placeholder=" "
+              }}
+            </div>
+            <div class="grid__item one-quarter">
+              {{> Apollos.Forms.Select
+                name="State"
+                items=states
+                includeBlank=true
+                placeholder="State"
+                label="State"
+                prefill=false
+                class='push-half-ends hard'
+                selectClass='h4'
+                optionClass="lowercase"
+              }}
+            </div>
+            <div class="grid__item one-quarter">
+              {{> Apollos.Forms.Input
+                name="PostalCode"
+                label="Zip"
+                class="soft-half-bottom"
+                inputClass='h4'
+                placeholder=" "
+              }}
+            </div>
+
+          </div>
+
+          <div class="grid">
+            <div class="grid__item one-half">
+              <button class="btn one-whole">
+                Add More
+              </button>
+            </div>
+            <div class="grid__item one-half">
+              <button class="btn btn--filled one-whole">
+                Save
+              </button>
+            </div>
+          </div>
+
+        </div>
+        <div class="soft-double-ends text-left">
+          <h4 class="soft-bottom">Notes</h4>
+
+          {{> Apollos.Forms.TextArea
+            name="Notes"
+            hideLabel=true
+          }}
+        </div>
+
+      </div>
+
+    </div>
+  {{/Apollos.Forms.Form}}
+{{/if}}
+
+
+</template>

@@ -81,13 +81,14 @@ _.each(sampleData, (data) ->
   Apollos.clients.upsert({name: client},
     $set:
       name: client
-      address:
+      address: [
         zipCode: faker.address.zipCode()
         city: faker.address.city()
         streetName: faker.address.streetName()
         streetAddress: faker.address.streetAddress()
         country: faker.address.country()
         stateAbbr: faker.address.stateAbbr()
+      ]
       email: faker.internet.email()
       phone: [
         {

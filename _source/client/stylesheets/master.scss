@@ -9,6 +9,9 @@
 @import "../../../vendor/framework/lib/framework";
 
 
+@import "./base/textarea";
+
+
 @import "./objects/backgrounds";
 
 @import "./complex-objects/overlays";
@@ -20,7 +23,7 @@
 @import "./helpers/outlined";
 //
 // @import "./base/links";
-// @import "./base/textarea";
+
 // @import "./objects/buttons";
 // @import "./objects/icons";
 // @import "./objects/upload-bar";

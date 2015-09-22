@@ -18,6 +18,7 @@ class Product extends Apollos.Component
 
     self = @
     self.projectId.set self.data().id
+
     self.clientId.set self.data().client
 
   odd: (index) ->
@@ -51,11 +52,11 @@ class Product extends Apollos.Component
     return project or {}
 
   clientObj: ->
+
     self = @
-    client = self.clientId.get()
+    client = self.data().client
     if not client
       return {}
 
-    client = Apollos.clients.findOne({_id: client})
-    console.log client
+    client = Apollos.clients.findOne({name: client})
     return client or {}

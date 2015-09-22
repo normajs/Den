@@ -15,7 +15,6 @@ class Den.new.quote extends Apollos.Component
 
     if not serviceName
       service = Apollos.services.findOne({})
-      console.log service
       @.serviceName.set(service.name)
       return
 
