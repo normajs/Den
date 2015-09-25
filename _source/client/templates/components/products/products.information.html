@@ -1,0 +1,141 @@
+<template name="Den.product.information">
+  <div class="panel">
+    <div class="panel__item--left seven-tenths">
+      <div class="soft-sides">
+
+        <div class="grid soft-double-top">
+
+          <div class="grid__item one-whole text-left">
+            <div class="grid flush">
+
+              <div class="grid__item one-half hard" style="vertical-align:middle">
+                <div class="soft-ends">
+                  <h5>
+                    <small>
+                      Status: <span class="text-primary">On-Time</span>
+                    </small>
+                  </h5>
+                  <h4 class="push-bottom">
+                    {{project.name}}
+                  </h4>
+
+                  <div class="display-inline-block">
+                    <div class="display-inline-block text-center" style="vertical-align:middle">
+                      <h2 class="flush text-dark-secondary">{{prettyDate.day}}</h2>
+                      <h5 class="flush"><small>{{prettyDate.month}}</small></h5>
+                    </div>
+                    <p class="flush display-inline-block soft-left text-truncate" style="vertical-align:middle; max-width: 235px;">
+
+                      <small>
+                        <strong>{{clientObj.name}}</strong>
+                        <br>
+                        {{#each clientObj.phone}}
+                          <strong class="text-dark-secondary">{{this.type}}:</strong> {{this.number}}
+                        {{/each}}
+                        <br>
+                        <span class="one-whole text-truncate">{{clientObj.email}}</span>
+
+                      </small>
+
+                    </p>
+                  </div>
+
+
+                </div>
+              </div>
+
+              <div class="grid__item one-half text-center hard" style="vertical-align:middle">
+                <div class="soft-ends soft-double-sides">
+                  <div class="grid flush">
+                    <div class="grid__item one-half hard" style="vertical-align:middle">
+                      <h2 class="flush text-dark-secondary">2</h2>
+                      <div class="soft-double-sides">
+                        <hr class="flush">
+                      </div>
+                      <h2 class="flush text-dark-secondary">1</h2>
+                    </div>
+
+                    <div class="grid__item one-half hard" style="vertical-align:middle">
+                      <h2 class="flush text-dark-secondary">(130)</h2>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+
+            </div>
+
+          </div>
+          <div class="grid__item one-whole">
+            <hr class="outlined--light flush-bottom">
+
+          </div>
+
+          <div class="grid__item one-half">
+
+            <div class="soft-ends text-left">
+              <h5><small class="text-dark">Front Print</small></h5>
+              <div class="ratio--fat-rectangle background--fill" style="background-image:url({{project.image}})">
+                <div class="ratio__item">
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="grid__item one-half">
+
+            <div class="soft-ends text-left">
+              <h5><small class="text-dark">Back Print</small></h5>
+              <div class="ratio--fat-rectangle background--fill" style="background-image:url({{project.image}})">
+                <div class="ratio__item">
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+
+
+    </div>
+      <div class="panel__item--right three-tenths background--light-secondary scrollable soft-double-bottom">
+        <div class="soft-bottom">
+          {{#each indexedComments}}
+          {{!-- --}}
+          <div class="soft text-left {{#if odd index}}background--light-tertiary{{/if}}">
+            <div class="grid">
+              <div class="grid__item one-quarter" style="vertical-align:middle;">
+                <div class="ratio--square push-half-top">
+                  <div class="ratio__item round background--fill" style="background-image:url({{avatar}})">
+                  </div>
+                </div>
+              </div>
+              <div class="grid__item three-quarters" style="vertical-align:middle;">
+                <h5 class="flush">
+                  <small class="text-dark-secondary">{{user}}</small>
+                </h5>
+              </div>
+              <div class="grid__item one-whole">
+                <p class="flush soft-half-top">
+                  <small>
+                    {{comment}}
+                  </small>
+                </p>
+              </div>
+
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+      <div class="locked-right locked-bottom three-tenths soft background--dark-tertiary" style="z-index: 2;">
+        <div class="fa fa-plus text-white"></div>
+      </div>
+
+    </div>
+</template>

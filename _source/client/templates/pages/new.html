@@ -4,30 +4,30 @@
   {{#modal}}
     <div class="panel background--light">
 
-      <div class="panel__item--left one-tenth background--light-secondary">
+      <div class="panel__item--left one-twelfth background--light-secondary">
 
-        <a href="/new/quote" class="display-block soft-double one-whole outlined--bottom outlined--light">
+        <a href="/new/quote" class="display-block soft-double-ends one-whole outlined--bottom outlined--light">
           <span class="fa fa-dollar {{#if isActive '/new/quote/'}}text-primary{{else}}text-dark{{/if}}"></span>
         </a>
 
-        <a href="/new/client" class="display-block soft-double one-whole outlined--bottom outlined--light">
+        <a href="/new/client" class="display-block soft-double-ends one-whole outlined--bottom outlined--light">
           <span class="fa fa-user {{#if isActive '/new/client/'}}text-primary{{else}}text-dark{{/if}}"></span>
         </a>
 
-        <a href="/new/task" class="display-block soft-double one-whole outlined--bottom outlined--light">
+        <a href="/new/task" class="display-block soft-double-ends one-whole outlined--bottom outlined--light">
           <span class="fa fa-list {{#if isActive '/new/task/'}}text-primary{{else}}text-dark{{/if}}"></span>
         </a>
-        
-        <a href="/new/event" class="display-block soft-double one-whole outlined--bottom outlined--light">
+
+        <a href="/new/event" class="display-block soft-double-ends one-whole outlined--bottom outlined--light">
           <span class="fa fa-calendar-o {{#if isActive '/new/event/'}}text-primary{{else}}text-dark{{/if}}"></span>
         </a>
 
-        <a href="/new/reminder" class="display-block soft-double one-whole outlined--bottom outlined--light">
+        <a href="/new/reminder" class="display-block soft-double-ends one-whole outlined--bottom outlined--light">
           <span class="fa fa-bookmark {{#if isActive '/new/reminder/'}}text-primary{{else}}text-dark{{/if}}"></span>
         </a>
       </div>
 
-      <div class="panel__item--right nine-tenths">
+      <div class="panel__item--right eleven-twelfths">
         {{> Template.dynamic template=type.get}}
       </div>
 

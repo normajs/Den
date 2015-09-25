@@ -103,7 +103,7 @@ Apollos.Router.route("/search", {
 
 ###
 
-Apollos.Router.route("/project/:client/:id", {
+Apollos.Router.route("/project/:client/:projectIdString", {
   action: (params, queryParams) ->
 
     Apollos.Layout.render("page-layout", {
@@ -114,8 +114,10 @@ Apollos.Router.route("/project/:client/:id", {
 
 })
 
-Apollos.Router.route("/project/:client/:name/:active", {
+Apollos.Router.route("/project/:client/:projectIdString/:active", {
   action: (params, queryParams) ->
+
+    console.log params
 
     Apollos.Layout.render("page-layout", {
       template: "desk"

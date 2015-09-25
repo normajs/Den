@@ -2,61 +2,44 @@
 class Product extends Apollos.Component
   @register "product"
 
-  # events: -> [
-  #   "click [data-close]": (event) ->
-  #
-  #     # remove once api is available for self.destroy()
-  #     Blaze.remove @._internals.templateInstance.view
-  #     Apollos.Router.go("/desk")
-  # ]
   vars: -> [
     projectId: null
     clientId: null
+    type: "Den.product.information"
   ]
 
+  isActive: (route) ->
+
+    active = @.type.get()
+    active = active.replace("Den.product.", "")
+
+    active = encodeURI(active)
+    if route.indexOf("/#{active}") > -1
+      return "active"
+
+    return
+
+  events: -> [
+
+    "click a[href*=\"project/\"]": (event) ->
+      event.preventDefault()
+
+      path = event.currentTarget.pathname
+      path = path.split("/")[4]
+      data = @.data()
+      @.type.set "Den.product.#{path}"
+      Apollos.Router.redirect("/project/#{data.client}/#{data.projectIdString}/#{path}", true)
+
+  ]
   onCreated: ->
 
     self = @
-    self.projectId.set self.data().id
 
-    self.clientId.set self.data().client
+    data = self.data()
 
-  odd: (index) ->
+    if data.active
+      self.type.set "Den.product.#{data.active}"
 
-    return !(index % 2 is 0)
-
-  even: (index) ->
-    return (index % 2 is 0)
-
-  indexedComments: ->
-
-    self = @
-    indexedComments = []
-    comments = self.project()?.comments
-    if not comments
-      return indexedComments
-
-    for comment, index in comments
-      comment.index = index + 1
-      indexedComments.push comment
-
-    return indexedComments
-
-  project: ->
-    self = @
-    project = self.projectId.get()
-    if not project
-      return {}
-
-    project = Apollos.projects.findOne({_id: project})
-    return project or {}
-
-  clientObj: ->
-
-    self = @
-    client = self.data().client
-    if not client
-      return {}
-
-    client = Apollos.clients.findOne({name: client})
-    return client or {}
+    url = self.type.get()
+    url = url.replace("Den.product.", "")
+    Apollos.Router.redirect("/project/#{data.client}/#{data.projectIdString}/#{url}", true)

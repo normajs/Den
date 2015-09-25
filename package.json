@@ -7,5 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "norma-bower": "^0.3.7",
+    "norma-javascript": "^0.4.10",
+    "norma-link": "newspring/norma-link",
+    "norma-markup": "^0.5.7",
+    "norma-meteor": "^0.3.23",
+    "norma-sass": "^0.4.15"
+  }
 }

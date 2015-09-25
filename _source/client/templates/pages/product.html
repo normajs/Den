@@ -7,116 +7,35 @@
   {{#modal}}
     <div class="panel">
 
-      <div class="panel__item--left one-tenth background--light-secondary">
-        <a href="/project/information" class="display-block soft-double one-whole outlined--bottom outlined--light">
-          <span class="fa fa-info text-dark"></span>
+      <div class="panel__item--left one-twelfth background--light-secondary">
+        <a href="/project/{{client}}/{{projectIdString}}/information" class="display-block soft soft-double-ends one-whole outlined--bottom outlined--light">
+          <span class="fa fa-info {{#if isActive '/project/{{client}}/{{projectIdString}}/information/'}}text-primary{{else}}text-dark{{/if}}"></span>
         </a>
 
-        <a href="/project/quote" class="display-block soft-double one-whole outlined--bottom outlined--light">
-          <span class="fa fa-dollar text-dark"></span>
+        <a href="/project/{{client}}/{{projectIdString}}/quote" class="display-block soft soft-double-ends one-whole outlined--bottom outlined--light">
+          <span class="fa fa-dollar {{#if isActive '/project/{{client}}/{{projectIdString}}/quote/'}}text-primary{{else}}text-dark{{/if}}"></span>
         </a>
 
-        <a href="/project/client" class="display-block soft-double one-whole outlined--bottom outlined--light">
-          <span class="fa fa-user text-dark"></span>
+        <a href="/project/{{client}}/{{projectIdString}}/client" class="display-block soft soft-double-ends one-whole outlined--bottom outlined--light">
+          <span class="fa fa-user {{#if isActive '/project/{{client}}/{{projectIdString}}/client/'}}text-primary{{else}}text-dark{{/if}}"></span>
         </a>
 
-        <a href="/project/tasks" class="display-block soft-double one-whole outlined--bottom outlined--light">
-          <span class="fa fa-list text-dark"></span>
+        <a href="/project/{{client}}/{{projectIdString}}/tasks" class="display-block soft soft-double-ends one-whole outlined--bottom outlined--light">
+          <span class="fa fa-list {{#if isActive '/project/{{client}}/{{projectIdString}}/tasks/'}}text-primary{{else}}text-dark{{/if}}"></span>
         </a>
 
-        <a href="/project/event" class="display-block soft-double one-whole outlined--bottom outlined--light">
-          <span class="fa fa-calendar-o text-dark"></span>
+        <a href="/project/{{client}}/{{projectIdString}}/event" class="display-block soft soft-double-ends one-whole outlined--bottom outlined--light">
+          <span class="fa fa-calendar-o {{#if isActive '/project/{{client}}/{{projectIdString}}/event/'}}text-primary{{else}}text-dark{{/if}}"></span>
         </a>
 
-        <a href="/project/reminder" class="display-block soft-double one-whole outlined--bottom outlined--light">
-          <span class="fa fa-bookmark text-dark"></span>
+        <a href="/project/{{client}}/{{projectIdString}}/reminder" class="display-block soft soft-double-ends one-whole outlined--bottom outlined--light">
+          <span class="fa fa-bookmark {{#if isActive '/project/{{client}}/{{projectIdString}}/reminder/'}}text-primary{{else}}text-dark{{/if}}"></span>
         </a>
       </div>
 
-      {{#with project}}
-      <div class="panel__item--right nine-tenths background--light">
-        <div class="panel">
-          <div class="panel__item--left two-thirds">
-            <div class="grid">
-              <div class="grid__item one-half">
-
-                <div class="soft-ends">
-                  <div class="ratio--fat-rectangle background--fill" style="background-image:url({{image}})">
-                    <div class="ratio__item">
-
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-              <div class="grid__item one-whole">
-                <div class="soft-sides">
-                  <hr class="outlined--light">
-                </div>
-
-              </div>
-
-              <div class="grid__item one-whole text-left">
-                <div class="soft">
-
-                  <h4 class="push-bottom">
-                    {{name}}
-                  </h4>
-
-
-                  <h4 class="text-dark-secondary"><small>{{clientObj.name}}</small></h4>
-
-                  {{#each clientObj.phone}}
-                    <h5 class="text-dark-secondary"><srong>{{this.type}}:</strong> {{this.number}}</h5>
-                  {{/each}}
-                  <h5 class="text-dark-secondary">{{clientObj.email}}</h5>
-
-
-                </div>
-              </div>
-            </div>
-
-
-
-
-          </div>
-            <div class="panel__item--right one-third background--light-secondary scrollable soft-double-bottom">
-              <div class="soft-bottom">
-                {{#each indexedComments}}
-                {{!-- --}}
-                <div class="soft text-left {{#if odd index}}background--light-tertiary{{/if}}">
-                  <div class="grid">
-                    <div class="grid__item one-quarter" style="vertical-align:middle;">
-                      <div class="ratio--square push-half-top">
-                        <div class="ratio__item round background--fill" style="background-image:url({{avatar}})">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="grid__item three-quarters" style="vertical-align:middle;">
-                      <h5 class="flush">
-                        <small class="text-dark-secondary">{{user}}</small>
-                      </h5>
-                    </div>
-                    <div class="grid__item one-whole">
-                      <p class="flush soft-half-top">
-                        <small>
-                          {{comment}}
-                        </small>
-                      </p>
-                    </div>
-
-                  </div>
-                </div>
-                {{/each}}
-              </div>
-            </div>
-            <div class="locked-right locked-bottom one-third soft background--dark-tertiary" style="z-index: 2;">
-              <div class="fa fa-plus text-white"></div>
-            </div>
-
-          </div>
+        <div class="panel__item--right eleven-twelfths background--light">
+          {{> Template.dynamic template=type.get data=data}}
         </div>
-        {{/with}}
 
       </div>
 
