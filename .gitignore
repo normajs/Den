@@ -16,3 +16,6 @@
 
 # ignore fastlane reports
 .fastlane/report.xml
+
+# ignore local packages
+packages/*
