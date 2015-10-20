@@ -44,11 +44,4 @@ App.info({
 //   'android_xhdpi_landscape': 'resources/splash/splash-1280x720.png'
 // });
 
-App.setPreference('StatusBarOverlaysWebView', 'false');
-App.setPreference('StatusBarBackgroundColor', '#000000');
-App.setPreference('BackgroundColor', '0xff0000ff');
-App.setPreference('HideKeyboardFormAccessoryBar', true);
-App.setPreference('Orientation', 'default');
-App.setPreference('Orientation', 'all', 'ios');
-App.setPreference('Fullscreen', true);
-App.setPreference('UIRequiresFullScreen', true, 'ios');
+App.accessRule('*');
