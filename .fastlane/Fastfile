@@ -94,7 +94,6 @@ platform :ios do
       message: "App successfully released!",
       message_format: "html",
       channel: ENV['HIPCHAT_ROOM'],
-      from: "fastlane",
       success: true,
       notify_room: true
     )
@@ -105,7 +104,6 @@ platform :ios do
       message: "Lane #{lane} failed! #{exception}",
       message_format: "html",
       channel: ENV['HIPCHAT_ROOM'],
-      from: "fastlane",
       success: false,
       notify_room: true
     )
