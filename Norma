@@ -6,3 +6,5 @@ tasks:
       "apollos-core": "NewSpring/apollos-core#alpha"
     "/packages/apollos-core/client/stylesheets/.remote":
       "juction-framework": "NewSpring/junction-framework"
+    "/.remote":
+      "settings": "https://github.com/NewSpring/ops-settings.git"

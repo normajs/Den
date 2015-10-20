@@ -22,3 +22,6 @@ packages/*
 
 # ignore node modules
 node_modules/*
+
+# ignore settings
+.remote/*
