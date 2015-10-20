@@ -1,0 +1,8 @@
+name: "newspring-app"
+
+tasks:
+  bower:
+    "/packages":
+      "apollos-core": "NewSpring/apollos-core#alpha"
+    "/packages/apollos-core/client/stylesheets/.remote":
+      "juction-framework": "NewSpring/junction-framework"
