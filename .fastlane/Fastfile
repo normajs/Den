@@ -92,7 +92,7 @@ platform :ios do
   after_all do |lane|
     hipchat(
       message: "App successfully released!",
-      message_format: "html",
+      message_format: "text",
       channel: ENV['HIPCHAT_ROOM'],
       success: true,
       notify_room: true
@@ -102,7 +102,7 @@ platform :ios do
   error do |lane, exception|
     hipchat(
       message: "Lane #{lane} failed! #{exception}",
-      message_format: "html",
+      message_format: "text",
       channel: ENV['HIPCHAT_ROOM'],
       success: false,
       notify_room: true
