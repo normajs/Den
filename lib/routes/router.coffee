@@ -1,4 +1,4 @@
 Apollos.Router.route "/",
   action: ->
-    Apollos.Layout.render "fixedNav",
+    Apollos.Layout.render "layout",
       main: "app"
