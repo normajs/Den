@@ -16,7 +16,7 @@
 
 # This is the minimum version number required.
 # Update this, if you use features of a newer version
-fastlane_version "1.33.4"
+fastlane_version "1.33.5"
 
 default_platform :ios
 
@@ -91,7 +91,7 @@ platform :ios do
 
   after_all do |lane|
     hipchat(
-      message: "App successfully released!",
+      message: "@here App successfully released!",
       message_format: "html",
       channel: ENV['HIPCHAT_ROOM'],
       from: "fastlane",
