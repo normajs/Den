@@ -15,7 +15,7 @@ dependencies:
     # - wget https://storage.googleapis.com/kubernetes-release/release/v0.18.2/bin/linux/amd64/kubectl && chmod +x kubectl
     - if [ ! -f $HOME/.meteor/meteor ]; then curl https://install.meteor.com | sh; fi
     - sudo ln -s $HOME/.meteor/meteor /usr/bin/meteor
-    - npm install -g normajs@1.7.5
+    - npm install -g normajs@1.7.10
     - npm install -g mupx
   # override:
   #   - docker login -e "$DOCKER_EMAIL" -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
