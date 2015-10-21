@@ -36,6 +36,7 @@ deployment:
       - cp ./.remote/settings/sites/app.newspring.io/alpha.settings.json ./settings.json
       - cp ./.remote/settings/sites/app.newspring.io/alpha.mup.json ./mup.json
       - cp ./.remote/settings/sites/app.newspring.io/apollos.pem ./apollos.pem
+      - cp ./.remote/settings/sites/app.newspring.io/compose.pem ./compose.pem
       - cp ./.remote/settings/ssl/bundle.crt .
       - cp ./.remote/settings/ssl/private.key .
       # - ./kubectl rolling-update $CIRCLE_PROJECT_REPONAME --image="newspring/$SITE:$CIRCLE_SHA1" --logtostderr=true --timeout="3m0s" --update-period="1m"
