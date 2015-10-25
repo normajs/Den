@@ -48,3 +48,5 @@ App.launchScreens({
 });
 
 App.accessRule('*');
+
+App.setPreference('StatusBarOverlaysWebView', true);

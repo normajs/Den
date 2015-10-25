@@ -1,0 +1,4 @@
+/* wkwebview's default html background is black? */
+html {
+  background: #fff;
+}

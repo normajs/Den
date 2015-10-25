@@ -65,6 +65,8 @@ npm-bcrypt@0.7.8_2
 npm-mongo@1.4.39_1
 observe-sequence@1.0.7
 ordered-dict@1.0.4
+practicalmeteor:chai@1.9.2_3
+practicalmeteor:loglevel@1.2.0_1
 promise@0.5.0
 raix:handlebar-helpers@0.2.5
 random@1.0.4
@@ -77,6 +79,7 @@ routepolicy@1.0.6
 service-configuration@1.0.5
 session@1.1.1
 sha@1.0.4
+silvervue:wkwebview@0.1.4
 spacebars@1.0.7
 spacebars-compiler@1.0.7
 srp@1.0.4
