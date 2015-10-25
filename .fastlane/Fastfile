@@ -26,7 +26,7 @@ platform :ios do
     ensure_git_status_clean
   end
 
-  private_lane :build_app do
+  private_lane :provision do
     sigh(
       app_identifier: ENV['APP_IDENTIFIER'],
       username: ENV['APPLE_ID']
@@ -38,12 +38,28 @@ platform :ios do
       target_filter: ENV['SCHEME'],
       build_configuration: "Release"
     )
+  end
+
+  private_lane :build_app_production do
+    provision
 
     gym(
       # use_legacy_build_api: true,
       scheme: ENV['SCHEME'],
       project: ENV['PROJECT'],
       include_bitcode: false
+    )
+  end
+
+  private_lane :build_app_ad_hoc do
+    provision
+
+    gym(
+      # use_legacy_build_api: true,
+      scheme: ENV['SCHEME'],
+      project: ENV['PROJECT'],
+      include_bitcode: false,
+      export_method: "ad-hoc"
     )
   end
 
@@ -54,7 +70,7 @@ platform :ios do
 
   desc "Just build the app"
   lane :build do
-    build_app
+    build_app_production
   end
 
   desc "Submit a new Beta Build to Apple TestFlight"
@@ -62,7 +78,7 @@ platform :ios do
   lane :beta do
     # snapshot
 
-    build_app
+    build_app_production
 
     pilot(
       username: ENV['APPLE_ID']
@@ -74,7 +90,7 @@ platform :ios do
   lane :hockey do
     # snapshot
 
-    build_app
+    build_app_ad_hoc
 
     hockey(
       api_token: ENV['IOS_HOCKEY_TOKEN']
@@ -86,7 +102,7 @@ platform :ios do
   lane :deploy do
     # snapshot
 
-    build_app
+    build_app_production
 
     deliver(
       username: ENV['APPLE_ID'],
