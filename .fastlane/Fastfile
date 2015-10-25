@@ -52,6 +52,11 @@ platform :ios do
     snapshot
   end
 
+  desc "Just build the app"
+  lane :build do
+    build_app
+  end
+
   desc "Submit a new Beta Build to Apple TestFlight"
   desc "This will also make sure the profile is up to date"
   lane :beta do
