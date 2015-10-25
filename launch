@@ -67,6 +67,9 @@ elif [[ $1 = "play" ]]; then
 elif [[ $1 = "appstore" ]]; then
   echo "Deploying to App Store..."
   fastlane ios deploy
+elif [[ $1 = "build" ]]; then
+  echo "Just building the app..."
+  fastlane ios build
 else
   echo "Done"
 fi
