@@ -42,7 +42,8 @@ platform :ios do
     gym(
       use_legacy_build_api: true,
       scheme: ENV['SCHEME'],
-      project: ENV['PROJECT']
+      project: ENV['PROJECT'],
+      include_bitcode: false
     )
   end
 
