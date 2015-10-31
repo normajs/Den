@@ -1,0 +1,27 @@
+{
+  "name": "junction-framework",
+  "version": "0.2.1",
+  "description": "CSS layout framework for the Junction Library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NewSpring/junction-framework.git"
+  },
+  "keywords": [
+    "sass",
+    "framework"
+  ],
+  "author": "NewSpring Web",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NewSpring/junction-framework/issues"
+  },
+  "homepage": "https://github.com/NewSpring/junction-framework",
+  "dependencies": {
+    "norma-dss": "git://github.com/newspring/norma-dss.git",
+    "norma-sass": "^0.4.9"
+  }
+}

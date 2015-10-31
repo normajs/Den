@@ -1,0 +1,13 @@
+{
+  "name": "apollos-core",
+  "homepage": "https://github.com/NewSpring/apollos-core",
+  "_release": "7773b30172",
+  "_resolution": {
+    "type": "branch",
+    "branch": "alpha",
+    "commit": "7773b30172430d33f8764452bdd54a4684450d82"
+  },
+  "_source": "git://github.com/NewSpring/apollos-core.git",
+  "_target": "alpha",
+  "_originalSource": "NewSpring/apollos-core"
+}

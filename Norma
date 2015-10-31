@@ -1,4 +1,4 @@
-name: "den"
+name: "Den"
 
 tasks:
   bower:
@@ -7,4 +7,5 @@ tasks:
     "/packages/apollos-core/client/stylesheets/.remote":
       "junction-framework": "NewSpring/junction-framework"
     "/.remote":
-      "settings": "https://github.com/NewSpring/ops-settings.git"
+      "settings": "https://github.com/jbaxleyiii/settings.git"
+      "junction": "NewSpring/junction-framework"

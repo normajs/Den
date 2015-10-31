@@ -1,0 +1,200 @@
+
+$is-newspring: false;
+// $colors: (
+//   "primary": #9fdaae,
+//   "secondary": #bbe2c5,
+//   "tertiary": #d9eadd
+// );
+// $colors: extend($colors, (
+//   "primary": #88a388,
+//   "secondary": #657c69,
+//   "tertiary": #3c563c
+// ));
+
+$base-font-color: #303030;
+$colors: extend($colors, (
+  "primary": #ffc051,
+  "secondary": #00b4f1,
+  "tertiary": #ed0677,
+  "light-tertiary": #efefef
+));
+
+$use-new-namespace: true;
+$use-old-namespace: false;
+
+$fonts: extend($fonts, (
+  roboto: (
+    h1: (
+      font-family: "Roboto Condensed",
+      font-size: 2.5em,
+      line-height: .9,
+      letter-spacing: 3px,
+      font-weight: 800,
+      text-transform: uppercase,
+      margin-bottom: $base-spacing-unit
+    ),
+    h2: (
+      font-family: "Roboto Condensed",
+      font-size: 2.25em,
+      letter-spacing: 3px,
+      line-height: .9,
+      text-transform: uppercase,
+      margin-bottom: $base-spacing-unit
+    ),
+    h3: (
+      font-family: "Roboto Condensed",
+      font-size: 1.15em,
+      line-height: .9,
+      font-weight: 400,
+      text-transform: uppercase,
+      margin-bottom: $base-spacing-unit
+    ),
+    h4: (
+      font-family: "Roboto Condensed",
+      font-size: 1.15em,
+      line-height: 1,
+      font-weight: 700,
+      text-transform: uppercase,
+      margin-bottom: $half-spacing-unit
+    ),
+    h5: (
+      font-family: "Roboto Condensed",
+      font-size: 1em,
+      line-height: 1,
+      margin-bottom: $half-spacing-unit
+    ),
+    h5 small: (
+      color: darken(map-get($colors, light-tertiary), 10),
+      font-size: .75em
+
+    ),
+    h6: (
+      font-family: "Roboto Condensed",
+      font-size: 1em,
+      line-height: 1,
+      margin-bottom: $half-spacing-unit
+    ),
+    input: (
+      font-family: "Roboto Condensed",
+      font-size: 1em,
+      line-height: 1,
+      margin-bottom: $half-spacing-unit
+
+    )
+  ),
+  raleway: (
+    h1: (
+      font-family: "Raleway",
+      font-size: 4em,
+      line-height: .9,
+      letter-spacing: 0,
+      font-weight: 700,
+      text-transform: uppercase,
+      margin-bottom: $base-spacing-unit,
+      media-query: (
+        handheld: (
+          font-size: 2.25em
+        )
+      )
+    ),
+    h2: (
+      font-family: "Raleway",
+      font-size: 2.25em,
+      letter-spacing: 3px,
+      line-height: .9,
+      text-transform: uppercase,
+      margin-bottom: $base-spacing-unit
+    ),
+    h3: (
+      font-family: "Raleway",
+      font-size: 1.15em,
+      line-height: .9,
+      font-weight: 400,
+      text-transform: uppercase,
+      margin-bottom: $base-spacing-unit
+    ),
+    h4: (
+      font-family: "Raleway",
+      font-size: 1.15em,
+      line-height: 1,
+      font-weight: 400,
+      text-transform: uppercase,
+      margin-bottom: $half-spacing-unit
+    ),
+    h5: (
+      font-family: "Raleway",
+      font-size: .875em,
+      line-height: 1,
+      font-weight: 400,
+      margin-bottom: $half-spacing-unit
+    ),
+    h5 small: (
+      color: lighten(map-get($colors, dark-tertiary), 10)
+    ),
+    h6: (
+      font-family: "Raleway",
+      font-size: 1em,
+      line-height: 1,
+      margin-bottom: $half-spacing-unit
+    )
+  ),
+  "serif": (
+    h6: (
+      font-family: "Neuton",
+      font-size: .9em,
+      line-height: 1.15,
+      margin-bottom: $half-spacing-unit
+    ),
+    p: (
+      font-size: 1em,
+      line-height: 1.25,
+      font-family: "Neuton",
+      margin-bottom: $base-spacing-unit
+    ),
+    small: (
+      font-size: .875em,
+      line-height: 1.15
+    )
+  )
+));
+$headings: "roboto";
+// type sets
+$typography: extend($typography, (
+  h1: $headings,
+  h2: $headings,
+  h3: $headings,
+  h4: $headings,
+  h5: $headings,
+  h5 small: $headings,
+  input: $headings,
+  h6: "serif",
+  p: "serif",
+  small: "serif"
+));
+$ratios: extend($ratios, (
+  ratio--picture: (
+    width: 1,
+    height: 1.25
+  ),
+  ratio--thin: (
+    width: 3,
+    height: 1
+  ),
+  ratio--fat-rectangle: (
+    width: 640,
+    height: 415
+  )
+));
+$brands: "facebook", "twitter", "instagram";
+$constraints: (
+  "copy": (
+    min-width: 240px,
+    max-width: 800px
+  ),
+  "small-copy": (
+    max-width: 400px
+  ),
+  "submit": (
+    max-width: 400px
+  )
+);

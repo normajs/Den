@@ -1,0 +1,17 @@
+{
+  "name": "junction-framework",
+  "tasks": {
+    "sass": {
+      "src": "lib/**/*",
+      "dest": "./",
+      "comb": false,
+      "lint": false,
+      "minify": false
+    },
+    "dss": {
+      "endpoint": "NewSpring/norma-dss",
+      "src": "lib/**/*",
+      "dest": "http://localhost:2000"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "junction-framework",
+  "homepage": "https://github.com/NewSpring/junction-framework",
+  "_release": "03c6dedc65",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "03c6dedc6513109b5b1327a916d96b6ffd153ae2"
+  },
+  "_source": "git://github.com/NewSpring/junction-framework.git",
+  "_target": "*",
+  "_originalSource": "NewSpring/junction-framework"
+}
