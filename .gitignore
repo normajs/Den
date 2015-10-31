@@ -25,3 +25,8 @@ node_modules/*
 
 # ignore settings
 .remote/*
+
+bundle.crt
+private.key
+mup.json
+settings.json
