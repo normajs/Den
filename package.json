@@ -1,6 +1,6 @@
 {
-  "name": "newspring-app",
-  "version": "0.0.1",
+  "name": "Den",
+  "version": "0.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/newspring/newspring-app.git"
+    "url": "git+https://github.com/normajs/Den.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/newspring/newspring-app/issues"
+    "url": "https://github.com/normajs/Den/issues"
   },
-  "homepage": "https://github.com/newspring/newspring-app#readme",
+  "homepage": "https://github.com/normajs/Den#readme",
   "dependencies": {
     "norma-bower": "^0.3.7"
   }
